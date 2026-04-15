@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>จองคิวนวด — THAI Massage</title>
+<!-- CSS เหมือนเดิมทุกอย่าง -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;600;700&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* CSS ทั้งหมดเหมือนเดิม ไม่ต้องเปลี่ยน */
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --green:#0D4A35;--green2:#1A6B50;--green3:#27A07A;
@@ -15,282 +17,54 @@
   --rr:16px;--rr-sm:10px;
   --sh:0 4px 24px rgba(13,74,53,.10);
 }
-body{
-  font-family:'Sarabun',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  min-height:100vh;
-  overflow-x:hidden;
-}
-.hero{
-  background:var(--green);
-  padding:48px 24px 80px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.hero-leaf{
-  font-size:48px;
-  margin-bottom:16px;
-  display:block;
-  animation:float 4s ease-in-out infinite;
-}
+body{font-family:'Sarabun',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;overflow-x:hidden;}
+.hero{background:var(--green);padding:48px 24px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero-leaf{font-size:48px;margin-bottom:16px;display:block;animation:float 4s ease-in-out infinite;}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero h1{
-  font-family:'Noto Serif Thai',serif;
-  font-size:clamp(28px,6vw,42px);
-  font-weight:700;
-  color:#fff;
-}
-.hero p{
-  margin-top:10px;
-  color:rgba(255,255,255,.7);
-  font-size:15px;
-}
-.container{
-  max-width:520px;
-  margin:-40px auto 0;
-  padding:0 16px 64px;
-  position:relative;
-  z-index:1;
-}
-.card{
-  background:var(--surf);
-  border-radius:24px;
-  box-shadow:var(--sh);
-  overflow:hidden;
-  margin-bottom:16px;
-}
-.card-head{
-  background:linear-gradient(135deg,var(--green),var(--green2));
-  padding:18px 24px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.hero h1{font-family:'Noto Serif Thai',serif;font-size:clamp(28px,6vw,42px);font-weight:700;color:#fff;}
+.hero p{margin-top:10px;color:rgba(255,255,255,.7);font-size:15px;}
+.container{max-width:520px;margin:-40px auto 0;padding:0 16px 64px;position:relative;z-index:1;}
+.card{background:var(--surf);border-radius:24px;box-shadow:var(--sh);overflow:hidden;margin-bottom:16px;}
+.card-head{background:linear-gradient(135deg,var(--green),var(--green2));padding:18px 24px;display:flex;align-items:center;gap:12px;}
 .card-head span{font-size:20px;}
-.card-head h2{
-  font-family:'Noto Serif Thai',serif;
-  font-size:17px;
-  font-weight:600;
-  color:#fff;
-}
+.card-head h2{font-family:'Noto Serif Thai',serif;font-size:17px;font-weight:600;color:#fff;}
 .card-body{padding:24px;}
-.steps{
-  display:flex;
-  justify-content:center;
-  gap:0;
-  margin-bottom:28px;
-}
+.steps{display:flex;justify-content:center;gap:0;margin-bottom:28px;}
 .step{display:flex;align-items:center;}
-.step-dot{
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  font-weight:500;
-  background:var(--warm);
-  color:var(--text3);
-  border:2px solid var(--bdr);
-}
-.step.active .step-dot{
-  background:var(--green);
-  color:#fff;
-  border-color:var(--green);
-}
-.step.done .step-dot{
-  background:var(--green3);
-  color:#fff;
-  border-color:var(--green3);
-}
-.step-line{
-  width:40px;
-  height:2px;
-  background:var(--bdr);
-}
+.step-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;background:var(--warm);color:var(--text3);border:2px solid var(--bdr);}
+.step.active .step-dot{background:var(--green);color:#fff;border-color:var(--green);}
+.step.done .step-dot{background:var(--green3);color:#fff;border-color:var(--green3);}
+.step-line{width:40px;height:2px;background:var(--bdr);}
 .field{margin-bottom:18px;}
-label{
-  display:block;
-  font-size:13px;
-  font-weight:500;
-  color:var(--text2);
-  margin-bottom:6px;
-}
-input,select,textarea{
-  width:100%;
-  padding:12px 16px;
-  border:1.5px solid var(--bdr);
-  border-radius:var(--rr-sm);
-  font-family:'Sarabun',sans-serif;
-  font-size:15px;
-  background:#fff;
-}
-.svc-grid{
-  display:grid;
-  gap:10px;
-  max-height:400px;
-  overflow-y:auto;
-}
-.svc-card{
-  border:1.5px solid var(--bdr);
-  border-radius:var(--rr-sm);
-  padding:14px 16px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:#fff;
-}
-.svc-card.selected{
-  border-color:var(--green);
-  background:rgba(13,74,53,.04);
-}
+label{display:block;font-size:13px;font-weight:500;color:var(--text2);margin-bottom:6px;}
+input,select,textarea{width:100%;padding:12px 16px;border:1.5px solid var(--bdr);border-radius:var(--rr-sm);font-family:'Sarabun',sans-serif;font-size:15px;background:#fff;}
+.svc-grid{display:grid;gap:10px;max-height:400px;overflow-y:auto;}
+.svc-card{border:1.5px solid var(--bdr);border-radius:var(--rr-sm);padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;background:#fff;}
+.svc-card.selected{border-color:var(--green);background:rgba(13,74,53,.04);}
 .svc-name{font-size:14px;font-weight:500;}
-.svc-price{
-  font-family:'Noto Serif Thai',serif;
-  font-size:16px;
-  font-weight:600;
-  color:var(--green);
-}
-.cat-tabs{
-  display:flex;
-  gap:8px;
-  margin-bottom:16px;
-  overflow-x:auto;
-}
-.cat-btn{
-  padding:7px 16px;
-  border-radius:20px;
-  border:1.5px solid var(--bdr);
-  font-size:13px;
-  background:#fff;
-  cursor:pointer;
-  white-space:nowrap;
-}
-.cat-btn.active{
-  background:var(--green);
-  color:#fff;
-  border-color:var(--green);
-}
-.time-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-.time-btn{
-  padding:10px 4px;
-  border:1.5px solid var(--bdr);
-  border-radius:var(--rr-sm);
-  font-size:13px;
-  background:#fff;
-  cursor:pointer;
-  text-align:center;
-}
-.time-btn.selected{
-  background:var(--green);
-  color:#fff;
-  border-color:var(--green);
-}
-.summary{
-  background:var(--warm);
-  border-radius:var(--rr-sm);
-  padding:16px;
-}
-.sum-row{
-  display:flex;
-  justify-content:space-between;
-  padding:6px 0;
-  font-size:14px;
-}
+.svc-price{font-family:'Noto Serif Thai',serif;font-size:16px;font-weight:600;color:var(--green);}
+.cat-tabs{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;}
+.cat-btn{padding:7px 16px;border-radius:20px;border:1.5px solid var(--bdr);font-size:13px;background:#fff;cursor:pointer;white-space:nowrap;}
+.cat-btn.active{background:var(--green);color:#fff;border-color:var(--green);}
+.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.time-btn{padding:10px 4px;border:1.5px solid var(--bdr);border-radius:var(--rr-sm);font-size:13px;background:#fff;cursor:pointer;text-align:center;}
+.time-btn.selected{background:var(--green);color:#fff;border-color:var(--green);}
+.summary{background:var(--warm);border-radius:var(--rr-sm);padding:16px;}
+.sum-row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;}
 .sum-row.total{font-weight:600;}
-.btn{
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:var(--rr-sm);
-  font-family:'Noto Serif Thai',serif;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-}
-.btn-primary{
-  background:var(--green);
-  color:#fff;
-}
-.btn-primary:disabled{
-  background:var(--text3);
-  cursor:not-allowed;
-}
-.btn-ghost{
-  background:transparent;
-  color:var(--text2);
-  border:1.5px solid var(--bdr);
-  margin-top:10px;
-  font-family:'Sarabun',sans-serif;
-}
-.success-card{
-  text-align:center;
-  padding:40px 24px;
-}
-.success-icon{
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  background:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 20px;
-  font-size:32px;
-  color:#fff;
-}
-.booking-ref{
-  margin:20px auto;
-  background:var(--warm);
-  border-radius:var(--rr-sm);
-  padding:16px;
-  max-width:280px;
-}
-.ref-code{
-  font-family:monospace;
-  font-size:20px;
-  font-weight:700;
-  color:var(--green);
-}
-.loading-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(13,74,53,.6);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:100;
-}
+.btn{width:100%;padding:15px;border:none;border-radius:var(--rr-sm);font-family:'Noto Serif Thai',serif;font-size:16px;font-weight:600;cursor:pointer;}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:disabled{background:var(--text3);cursor:not-allowed;}
+.btn-ghost{background:transparent;color:var(--text2);border:1.5px solid var(--bdr);margin-top:10px;font-family:'Sarabun',sans-serif;}
+.success-card{text-align:center;padding:40px 24px;}
+.success-icon{width:72px;height:72px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:32px;color:#fff;}
+.booking-ref{margin:20px auto;background:var(--warm);border-radius:var(--rr-sm);padding:16px;max-width:280px;}
+.ref-code{font-family:monospace;font-size:20px;font-weight:700;color:var(--green);}
+.loading-overlay{position:fixed;inset:0;background:rgba(13,74,53,.6);display:none;align-items:center;justify-content:center;z-index:100;}
 .loading-overlay.show{display:flex;}
-.spinner{
-  width:48px;
-  height:48px;
-  border:3px solid rgba(255,255,255,.3);
-  border-top-color:#fff;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-}
+.spinner{width:48px;height:48px;border:3px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
-.toast{
-  position:fixed;
-  bottom:24px;
-  left:50%;
-  transform:translateX(-50%);
-  background:var(--text);
-  color:#fff;
-  border-radius:30px;
-  padding:12px 24px;
-  z-index:200;
-  display:none;
-}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;border-radius:30px;padding:12px 24px;z-index:200;display:none;}
 .toast.show{display:block;}
 .page{display:none;}
 .page.active{display:block;}
@@ -304,127 +78,50 @@ hr{border:none;border-top:1px solid var(--bdr);margin:16px 0;}
 <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div></div>
 <div class="toast" id="toast"></div>
 
-<div class="hero">
-  <span class="hero-leaf">🌿</span>
-  <h1>จองคิวนวดแผนไทย</h1>
-  <p>THAI Massage — ผ่อนคลายทุกความล้า</p>
-</div>
+<div class="hero"><span class="hero-leaf">🌿</span><h1>จองคิวนวดแผนไทย</h1><p>THAI Massage — ผ่อนคลายทุกความล้า</p></div>
 
 <div class="container">
-  <div class="steps">
-    <div class="step active" id="s1"><div class="step-dot">1</div></div>
-    <div class="step-line"></div>
-    <div class="step" id="s2"><div class="step-dot">2</div></div>
-    <div class="step-line"></div>
-    <div class="step" id="s3"><div class="step-dot">3</div></div>
-  </div>
+  <div class="steps"><div class="step active" id="s1"><div class="step-dot">1</div></div><div class="step-line"></div><div class="step" id="s2"><div class="step-dot">2</div></div><div class="step-line"></div><div class="step" id="s3"><div class="step-dot">3</div></div></div>
 
-  <!-- PAGE 1: เลือกบริการ -->
+  <!-- PAGE 1 -->
   <div class="page active" id="p1">
-    <div class="card">
-      <div class="card-head"><span>💆</span><h2>เลือกบริการ</h2></div>
-      <div class="card-body">
-        <div class="cat-tabs" id="catTabs"></div>
-        <div class="svc-grid" id="svcGrid">
-          <div style="text-align:center;padding:32px;color:var(--text3);">⏳ กำลังโหลดเมนู…</div>
-        </div>
-      </div>
-    </div>
+    <div class="card"><div class="card-head"><span>💆</span><h2>เลือกบริการ</h2></div><div class="card-body"><div class="cat-tabs" id="catTabs"></div><div class="svc-grid" id="svcGrid"><div style="text-align:center;padding:32px;color:var(--text3);">⏳ กำลังโหลดเมนู…</div></div></div></div>
     <button class="btn btn-primary" id="btn1" onclick="goP2()" disabled>ถัดไป — เลือกวันเวลา →</button>
   </div>
 
-  <!-- PAGE 2: วันเวลา -->
+  <!-- PAGE 2, 3, 4 เหมือนเดิมทุกอย่าง -->
   <div class="page" id="p2">
-    <div class="card">
-      <div class="card-head"><span>📅</span><h2>เลือกวันและเวลา</h2></div>
-      <div class="card-body">
-        <div class="field">
-          <label>วันที่ต้องการนวด <span style="color:var(--gold);">*</span></label>
-          <input type="date" id="dateInput">
-        </div>
-        <div class="field">
-          <label>เวลาเข้านวด <span style="color:var(--gold);">*</span></label>
-          <div class="time-grid" id="timeGrid"></div>
-        </div>
-        <div class="field">
-          <label>หมอนวด (ไม่บังคับ)</label>
-          <select id="therapistSel">
-            <option value="">— ไม่ระบุ / แล้วแต่ร้าน —</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>หมายเหตุ / ความต้องการพิเศษ</label>
-          <textarea id="noteInput" rows="2" placeholder="เช่น แพ้น้ำมันหอมระเหย, นวดเบา"></textarea>
-        </div>
-      </div>
-    </div>
+    <div class="card"><div class="card-head"><span>📅</span><h2>เลือกวันและเวลา</h2></div><div class="card-body">
+      <div class="field"><label>วันที่ต้องการนวด <span style="color:var(--gold);">*</span></label><input type="date" id="dateInput"></div>
+      <div class="field"><label>เวลาเข้านวด <span style="color:var(--gold);">*</span></label><div class="time-grid" id="timeGrid"></div></div>
+      <div class="field"><label>หมอนวด (ไม่บังคับ)</label><select id="therapistSel"><option value="">— ไม่ระบุ / แล้วแต่ร้าน —</option></select></div>
+      <div class="field"><label>หมายเหตุ / ความต้องการพิเศษ</label><textarea id="noteInput" rows="2" placeholder="เช่น แพ้น้ำมันหอมระเหย, นวดเบา"></textarea></div>
+    </div></div>
     <button class="btn btn-primary" id="btn2" onclick="goP3()" disabled>ถัดไป — กรอกข้อมูล →</button>
     <button class="btn btn-ghost" onclick="goP1()">← ย้อนกลับ</button>
   </div>
 
-  <!-- PAGE 3: ข้อมูลลูกค้า -->
   <div class="page" id="p3">
-    <div class="card">
-      <div class="card-head"><span>👤</span><h2>ข้อมูลของคุณ</h2></div>
-      <div class="card-body">
-        <div class="field">
-          <label>ชื่อ-นามสกุล <span style="color:var(--gold);">*</span></label>
-          <input type="text" id="nameInput" placeholder="เช่น สมชาย ใจดี" oninput="checkP3()">
-        </div>
-        <div class="row2">
-          <div class="field">
-            <label>เบอร์โทรศัพท์ <span style="color:var(--gold);">*</span></label>
-            <input type="tel" id="phoneInput" placeholder="08x-xxx-xxxx" oninput="checkP3()">
-          </div>
-          <div class="field">
-            <label>Line ID</label>
-            <input type="text" id="lineInput" placeholder="@lineID">
-          </div>
-        </div>
-        <hr>
-        <p style="font-size:13px;font-weight:500;color:var(--text2);margin-bottom:12px;">สรุปการจอง</p>
-        <div class="summary">
-          <div class="sum-row"><span>บริการ</span><span class="sum-val" id="sumSvc">-</span></div>
-          <div class="sum-row"><span>ระยะเวลา</span><span class="sum-val" id="sumHours">-</span></div>
-          <div class="sum-row"><span>วันที่</span><span class="sum-val" id="sumDate">-</span></div>
-          <div class="sum-row"><span>เวลา</span><span class="sum-val" id="sumTime">-</span></div>
-          <div class="sum-row"><span>หมอนวด</span><span class="sum-val" id="sumTh">-</span></div>
-          <div class="sum-row total"><span>ราคา</span><span class="sum-val" id="sumPrice" style="color:var(--green);font-size:18px;">-</span></div>
-        </div>
-        <p class="note">* ราคาอาจมีการเปลี่ยนแปลง กรุณาชำระที่ร้าน</p>
-      </div>
-    </div>
+    <div class="card"><div class="card-head"><span>👤</span><h2>ข้อมูลของคุณ</h2></div><div class="card-body">
+      <div class="field"><label>ชื่อ-นามสกุล <span style="color:var(--gold);">*</span></label><input type="text" id="nameInput" placeholder="เช่น สมชาย ใจดี" oninput="checkP3()"></div>
+      <div class="row2"><div class="field"><label>เบอร์โทรศัพท์ <span style="color:var(--gold);">*</span></label><input type="tel" id="phoneInput" placeholder="08x-xxx-xxxx" oninput="checkP3()"></div><div class="field"><label>Line ID</label><input type="text" id="lineInput" placeholder="@lineID"></div></div>
+      <hr><p style="font-size:13px;font-weight:500;color:var(--text2);margin-bottom:12px;">สรุปการจอง</p>
+      <div class="summary"><div class="sum-row"><span>บริการ</span><span id="sumSvc">-</span></div><div class="sum-row"><span>ระยะเวลา</span><span id="sumHours">-</span></div><div class="sum-row"><span>วันที่</span><span id="sumDate">-</span></div><div class="sum-row"><span>เวลา</span><span id="sumTime">-</span></div><div class="sum-row"><span>หมอนวด</span><span id="sumTh">-</span></div><div class="sum-row total"><span>ราคา</span><span id="sumPrice" style="color:var(--green);font-size:18px;">-</span></div></div>
+      <p class="note">* ราคาอาจมีการเปลี่ยนแปลง กรุณาชำระที่ร้าน</p>
+    </div></div>
     <button class="btn btn-primary" id="btn3" onclick="submitBooking()" disabled>🌿 ยืนยันการจอง</button>
     <button class="btn btn-ghost" onclick="goP2()">← ย้อนกลับ</button>
   </div>
 
-  <!-- PAGE 4: สำเร็จ -->
   <div class="page" id="p4">
-    <div class="card">
-      <div class="success-card">
-        <div class="success-icon">✓</div>
-        <h2 style="color:var(--green);margin-bottom:8px;">จองคิวสำเร็จแล้ว!</h2>
-        <p>ทางร้านได้รับการจองของคุณแล้ว<br>เราจะติดต่อยืนยันก่อนวันนัด</p>
-        <div class="booking-ref">
-          <div style="font-size:12px;color:var(--text3);">หมายเลขการจอง</div>
-          <div class="ref-code" id="refCode">-</div>
-        </div>
-        <div class="summary" style="text-align:left;">
-          <div class="sum-row"><span>บริการ</span><span id="ok-svc">-</span></div>
-          <div class="sum-row"><span>วันที่</span><span id="ok-date">-</span></div>
-          <div class="sum-row"><span>เวลา</span><span id="ok-time">-</span></div>
-          <div class="sum-row total"><span>ราคา</span><span id="ok-price" style="color:var(--green);">-</span></div>
-        </div>
-        <p class="note">📞 สอบถาม: <strong>02-xxx-xxxx</strong><br>เปิดบริการทุกวัน 10.00 – 22.00 น.</p>
-      </div>
-    </div>
+    <div class="card"><div class="success-card"><div class="success-icon">✓</div><h2 style="color:var(--green);margin-bottom:8px;">จองคิวสำเร็จแล้ว!</h2><p>ทางร้านได้รับการจองของคุณแล้ว<br>เราจะติดต่อยืนยันก่อนวันนัด</p><div class="booking-ref"><div style="font-size:12px;color:var(--text3);">หมายเลขการจอง</div><div class="ref-code" id="refCode">-</div></div><div class="summary" style="text-align:left;"><div class="sum-row"><span>บริการ</span><span id="ok-svc">-</span></div><div class="sum-row"><span>วันที่</span><span id="ok-date">-</span></div><div class="sum-row"><span>เวลา</span><span id="ok-time">-</span></div><div class="sum-row total"><span>ราคา</span><span id="ok-price">-</span></div></div><p class="note">📞 02-xxx-xxxx | 10.00–22.00 น.</p></div></div>
     <button class="btn btn-primary" onclick="resetAll()" style="max-width:280px;margin:0 auto;display:flex;">จองคิวใหม่</button>
   </div>
 </div>
 
 <script>
 // ═══════════════════════════════════════════════════════════
-//  CONFIG — ใส่ URL จาก Google Apps Script ของคุณที่นี่
+//  CONFIG
 // ═══════════════════════════════════════════════════════════
 var GAS_URL = 'https://script.google.com/macros/s/AKfycbwnV-cGR90tnR4CDHIMc7P3NYrsgTMsSQii9WiYpGxvZcMecRHph0UReRCJd2__23qB/exec';
 
@@ -441,7 +138,6 @@ window.addEventListener('load', function(){
   document.getElementById('dateInput').min = todayStr;
   document.getElementById('dateInput').value = todayStr;
   document.getElementById('dateInput').addEventListener('change', function(){ SEL.date=this.value; checkP2(); });
-  
   buildTimeGrid();
   loadBootstrap();
 });
@@ -449,25 +145,13 @@ window.addEventListener('load', function(){
 function loadBootstrap(){
   var callback = 'bootstrap_' + Date.now();
   window[callback] = function(data){
-    if(data && data.ok){ 
-      G = data; 
-      buildCatTabs(); 
-      buildSvcGrid('ทั้งหมด'); 
-      buildTherapistSel(); 
-    } else {
-      showError('โหลดเมนูไม่สำเร็จ');
-      useFallbackMenu();
-    }
+    if(data && data.ok){ G = data; buildCatTabs(); buildSvcGrid('ทั้งหมด'); buildTherapistSel(); }
+    else { showError('โหลดเมนูไม่สำเร็จ'); useFallbackMenu(); }
     delete window[callback];
   };
-  
   var script = document.createElement('script');
   script.src = GAS_URL + '?action=bootstrap&callback=' + callback;
-  script.onerror = function(){ 
-    showError('เชื่อมต่อเซิร์ฟเวอร์ไม่ได้');
-    useFallbackMenu();
-    delete window[callback]; 
-  };
+  script.onerror = function(){ showError('เชื่อมต่อเซิร์ฟเวอร์ไม่ได้'); useFallbackMenu(); delete window[callback]; };
   document.head.appendChild(script);
 }
 
@@ -481,14 +165,11 @@ function useFallbackMenu(){
     {cat:'สปา',name:'ขัดผิว',hours:1,price:600,on:true}
   ];
   G.therapists = [];
-  buildCatTabs(); 
-  buildSvcGrid('ทั้งหมด');
+  buildCatTabs(); buildSvcGrid('ทั้งหมด');
 }
 
 function showError(msg){
-  document.getElementById('svcGrid').innerHTML = 
-    '<div style="text-align:center;padding:32px;color:#C0392B;">⚠️ ' + msg + 
-    '<br><button onclick="loadBootstrap()" style="margin-top:12px;padding:8px 16px;background:var(--green);color:#fff;border:none;border-radius:20px;cursor:pointer;">ลองใหม่</button></div>';
+  document.getElementById('svcGrid').innerHTML = '<div style="text-align:center;padding:32px;color:#C0392B;">⚠️ ' + msg + '<br><button onclick="loadBootstrap()" style="margin-top:12px;padding:8px 16px;background:var(--green);color:#fff;border:none;border-radius:20px;cursor:pointer;">ลองใหม่</button></div>';
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -497,23 +178,18 @@ function showError(msg){
 function buildCatTabs(){
   var cats = ['ทั้งหมด'];
   G.menu.forEach(function(m){ if(m.on!==false && cats.indexOf(m.cat)<0) cats.push(m.cat); });
-  document.getElementById('catTabs').innerHTML = cats.map(function(c){ 
-    return '<button class="cat-btn'+(c===curCat?' active':'')+'" onclick="filterCat(\''+c+'\')">'+c+'</button>'; 
-  }).join('');
+  document.getElementById('catTabs').innerHTML = cats.map(function(c){ return '<button class="cat-btn'+(c===curCat?' active':'')+'" onclick="filterCat(\''+c+'\')">'+c+'</button>'; }).join('');
 }
 
-function filterCat(cat){ 
-  curCat = cat; 
-  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.toggle('active',b.textContent===cat); }); 
-  buildSvcGrid(cat); 
-}
+function filterCat(cat){ curCat = cat; document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.toggle('active',b.textContent===cat); }); buildSvcGrid(cat); }
 
+// ✅✅✅ แก้ไขฟังก์ชันนี้ ✅✅✅
 function buildSvcGrid(cat){
   var items = G.menu.filter(function(m){ return m.on!==false && (cat==='ทั้งหมด'||m.cat===cat); });
   var html = '';
   items.forEach(function(m){
     var selected = SEL.svc && SEL.svc.name===m.name && SEL.svc.hours===m.hours;
-    html += '<div class="svc-card'+(selected?' selected':'')+'" onclick="selectSvc('+JSON.stringify(m).replace(/'/g,'&#39;')+')">'+
+    html += '<div class="svc-card'+(selected?' selected':'')+'" data-key="'+m.name+'|'+m.hours+'" onclick="selectSvc(this)">'+
       '<div><div class="svc-name">'+m.name+'</div><div style="font-size:12px;color:var(--text3);">'+m.hours+' ชั่วโมง</div></div>'+
       '<div style="display:flex;align-items:center;"><div class="svc-price">฿'+m.price.toLocaleString()+'</div>'+
       '<div style="width:20px;height:20px;border-radius:50%;background:var(--green);margin-left:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;'+(selected?'opacity:1':'opacity:0')+'">✓</div></div></div>';
@@ -521,40 +197,36 @@ function buildSvcGrid(cat){
   document.getElementById('svcGrid').innerHTML = html || '<div style="text-align:center;padding:24px;color:var(--text3);">ไม่มีบริการในหมวดนี้</div>';
 }
 
-function selectSvc(m){ 
-  SEL.svc = m; 
+// ✅✅✅ แก้ไขฟังก์ชันนี้ ✅✅✅
+function selectSvc(el){ 
+  var key = el.getAttribute('data-key');
+  var parts = key.split('|');
+  var service = G.menu.find(function(m){ return m.name === parts[0] && m.hours === parseFloat(parts[1]); });
+  if(!service) return;
+  
+  SEL.svc = service; 
   document.querySelectorAll('.svc-card').forEach(function(c){ c.classList.remove('selected'); }); 
-  document.querySelector('.svc-card[data-key="'+m.name+'|'+m.hours+'"]')?.classList.add('selected');
-  document.querySelectorAll('.svc-card').forEach(function(c){
-    if(c.querySelector('.svc-name').textContent === m.name) c.classList.add('selected');
-  });
+  el.classList.add('selected');
   document.getElementById('btn1').disabled = false; 
 }
 
 function buildTimeGrid(){
   var slots = [];
-  for(var h=10;h<=21;h++){ 
-    slots.push(String(h).padStart(2,'0')+':00'); 
-    if(h<21) slots.push(String(h).padStart(2,'0')+':30'); 
-  }
-  document.getElementById('timeGrid').innerHTML = slots.map(function(t){ 
-    return '<button class="time-btn" onclick="selectTime(\''+t+'\')">'+t+'</button>'; 
-  }).join('');
+  for(var h=10;h<=21;h++){ slots.push(String(h).padStart(2,'0')+':00'); if(h<21) slots.push(String(h).padStart(2,'0')+':30'); }
+  document.getElementById('timeGrid').innerHTML = slots.map(function(t){ return '<button class="time-btn" onclick="selectTime(this)">'+t+'</button>'; }).join('');
 }
 
-function selectTime(t){ 
-  SEL.time = t; 
+function selectTime(el){ 
+  SEL.time = el.textContent; 
   document.querySelectorAll('.time-btn').forEach(function(b){ b.classList.remove('selected'); }); 
-  event.target.classList.add('selected');
+  el.classList.add('selected');
   checkP2(); 
 }
 
 function buildTherapistSel(){
   var sel = document.getElementById('therapistSel');
   sel.innerHTML = '<option value="">— ไม่ระบุ / แล้วแต่ร้าน —</option>';
-  G.therapists.forEach(function(t){ 
-    sel.innerHTML += '<option value="'+(t.nick||t.name)+'">'+(t.nick||t.name)+'</option>'; 
-  });
+  G.therapists.forEach(function(t){ sel.innerHTML += '<option value="'+(t.nick||t.name)+'">'+(t.nick||t.name)+'</option>'; });
   sel.addEventListener('change', function(){ SEL.therapist=this.value; });
 }
 
@@ -562,43 +234,30 @@ function buildTherapistSel(){
 //  NAVIGATION
 // ═══════════════════════════════════════════════════════════
 function goP1(){ showPage(1); }
-function goP2(){ 
-  if(!SEL.svc){ showToast('กรุณาเลือกบริการ'); return; }
-  showPage(2); 
-  SEL.date = document.getElementById('dateInput').value; 
-  checkP2(); 
-}
+function goP2(){ if(!SEL.svc){ showToast('กรุณาเลือกบริการ'); return; } showPage(2); SEL.date = document.getElementById('dateInput').value; checkP2(); }
 function goP3(){
   SEL.date = document.getElementById('dateInput').value;
   SEL.therapist = document.getElementById('therapistSel').value;
   SEL.note = document.getElementById('noteInput').value;
-  
   document.getElementById('sumSvc').textContent = SEL.svc.name;
   document.getElementById('sumHours').textContent = SEL.svc.hours+' ชั่วโมง';
   document.getElementById('sumDate').textContent = thaiDate(SEL.date);
   document.getElementById('sumTime').textContent = SEL.time+' น.';
   document.getElementById('sumTh').textContent = SEL.therapist||'ไม่ระบุ';
   document.getElementById('sumPrice').textContent = '฿'+SEL.svc.price.toLocaleString();
-  
-  showPage(3); 
-  checkP3(); 
+  showPage(3); checkP3(); 
 }
 
 function showPage(n){
   [1,2,3,4].forEach(function(i){
     document.getElementById('p'+i).classList.toggle('active',i===n);
-    var s = document.getElementById('s'+i); 
-    if(s) s.className = 'step'+(i<n?' done':i===n?' active':'');
+    var s = document.getElementById('s'+i); if(s) s.className = 'step'+(i<n?' done':i===n?' active':'');
   });
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function checkP2(){ document.getElementById('btn2').disabled = !(SEL.date && SEL.time); }
-function checkP3(){ 
-  var name = document.getElementById('nameInput').value.trim();
-  var phone = document.getElementById('phoneInput').value.trim();
-  document.getElementById('btn3').disabled = !(name && phone); 
-}
+function checkP3(){ document.getElementById('btn3').disabled = !(document.getElementById('nameInput').value.trim() && document.getElementById('phoneInput').value.trim()); }
 
 // ═══════════════════════════════════════════════════════════
 //  SUBMIT
@@ -607,30 +266,15 @@ function submitBooking(){
   SEL.name = document.getElementById('nameInput').value.trim();
   SEL.phone = document.getElementById('phoneInput').value.trim();
   SEL.line = document.getElementById('lineInput').value.trim();
-  
   if(!SEL.name||!SEL.phone){ showToast('กรุณากรอกชื่อและเบอร์โทร'); return; }
   
   var ti = SEL.time.split(':');
   var outMin = parseInt(ti[0])*60+parseInt(ti[1])+(SEL.svc.hours*60);
   var timeOut = String(Math.floor(outMin/60)).padStart(2,'0')+':'+String(outMin%60).padStart(2,'0');
   
-  var params = 'action=addQueue'+
-    '&date='+encodeURIComponent(SEL.date)+
-    '&name='+encodeURIComponent(SEL.name)+
-    '&service='+encodeURIComponent(SEL.svc.name)+
-    '&hours='+SEL.svc.hours+
-    '&price='+SEL.svc.price+
-    '&timeIn='+SEL.time+
-    '&timeOut='+timeOut+
-    '&therapist='+encodeURIComponent(SEL.therapist)+
-    '&note='+encodeURIComponent(SEL.note?'[จองออนไลน์] '+SEL.note:'[จองออนไลน์]')+
-    '&isBook=true&status=จอง'+
-    '&phone='+encodeURIComponent(SEL.phone)+
-    '&line='+encodeURIComponent(SEL.line)+
-    '&discount=0&pay=';
+  var params = 'action=addQueue&date='+encodeURIComponent(SEL.date)+'&name='+encodeURIComponent(SEL.name)+'&service='+encodeURIComponent(SEL.svc.name)+'&hours='+SEL.svc.hours+'&price='+SEL.svc.price+'&timeIn='+SEL.time+'&timeOut='+timeOut+'&therapist='+encodeURIComponent(SEL.therapist)+'&note='+encodeURIComponent(SEL.note?'[จองออนไลน์] '+SEL.note:'[จองออนไลน์]')+'&isBook=true&status=จอง&phone='+encodeURIComponent(SEL.phone)+'&line='+encodeURIComponent(SEL.line)+'&discount=0&pay=';
   
   showLoading(true);
-  
   var callback = 'addQueue_' + Date.now();
   window[callback] = function(r){
     showLoading(false);
@@ -641,19 +285,12 @@ function submitBooking(){
       document.getElementById('ok-time').textContent = SEL.time+' น.';
       document.getElementById('ok-price').textContent = '฿'+SEL.svc.price.toLocaleString();
       showPage(4);
-    } else {
-      showToast('เกิดข้อผิดพลาด: '+(r&&r.msg?r.msg:'กรุณาลองใหม่'));
-    }
+    } else { showToast('เกิดข้อผิดพลาด: '+(r&&r.msg?r.msg:'กรุณาลองใหม่')); }
     delete window[callback];
   };
-  
   var script = document.createElement('script');
   script.src = GAS_URL + '?' + params + '&callback=' + callback;
-  script.onerror = function(){ 
-    showLoading(false); 
-    showToast('ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้'); 
-    delete window[callback]; 
-  };
+  script.onerror = function(){ showLoading(false); showToast('ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้'); delete window[callback]; };
   document.head.appendChild(script);
 }
 
@@ -662,21 +299,14 @@ function submitBooking(){
 // ═══════════════════════════════════════════════════════════
 function thaiDate(ds){
   if(!ds) return '-';
-  var p = ds.split('-');
-  var d = new Date(+p[0],+p[1]-1,+p[2]);
+  var p = ds.split('-'); var d = new Date(+p[0],+p[1]-1,+p[2]);
   var wd = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัส','ศุกร์','เสาร์'];
   var mo = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
   return 'วัน'+wd[d.getDay()]+' '+d.getDate()+' '+mo[d.getMonth()]+' '+(d.getFullYear()+543);
 }
 
 function showLoading(on){ document.getElementById('loadingOverlay').classList.toggle('show',on); }
-
-function showToast(msg){
-  var t = document.getElementById('toast');
-  t.textContent = msg; 
-  t.classList.add('show');
-  setTimeout(function(){ t.classList.remove('show'); },3000);
-}
+function showToast(msg){ var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); },3000); }
 
 function resetAll(){
   SEL = {svc:null,date:'',time:'',therapist:'',note:'',name:'',phone:'',line:''};
@@ -687,12 +317,9 @@ function resetAll(){
   document.querySelectorAll('.svc-card').forEach(function(c){c.classList.remove('selected');});
   document.querySelectorAll('.time-btn').forEach(function(b){b.classList.remove('selected');});
   document.getElementById('btn1').disabled = true;
-  
   var today = new Date();
   document.getElementById('dateInput').value = today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
-  
-  buildSvcGrid(curCat);
-  showPage(1);
+  buildSvcGrid(curCat); showPage(1);
 }
 </script>
 </body>
